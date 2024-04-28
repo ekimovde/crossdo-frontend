@@ -127,7 +127,7 @@ const onSubmit = submit(async () => {
 });
 
 const onAddCourse = async (): Promise<void> => {
-  const payload = createCourseAddRequestArgs();
+  const payload = createCourseRequestArgs();
   const { success } = await addCourse(payload);
 
   if (success) {
@@ -139,7 +139,7 @@ const onAddCourse = async (): Promise<void> => {
 };
 
 const onUpdateCourse = async (): Promise<void> => {
-  const payload = createCourseUpdateRequestArgs();
+  const payload = createCourseRequestArgs();
   const { success } = await updateCourse(payload, props.course?.id as number);
 
   if (success) {
@@ -172,17 +172,8 @@ const onCloseModal = async (value: boolean): Promise<void> => {
   clearErrors();
 };
 
-const createCourseAddRequestArgs = (): CourseCreate => {
+const createCourseRequestArgs = (): CourseCreate | CourseUpdate => {
   return {
-    title: values.title,
-    description: values.description,
-    course_url: values.courseUrl,
-  };
-};
-
-const createCourseUpdateRequestArgs = (): CourseUpdate => {
-  return {
-    id: props.course?.id as number,
     title: values.title,
     description: values.description,
     course_url: values.courseUrl,

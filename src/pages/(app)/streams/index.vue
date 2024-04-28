@@ -106,12 +106,12 @@ const fetchStreams = async (options: PaginationOptions): Promise<void> => {
 
   loading.value = true;
 
-  // const { success, response } = await getStreams(currentPage, currentPageSize);
+  const { success, response } = await getStreams(currentPage, currentPageSize);
 
-  // if (success && response) {
-  //   total.value = response.total;
-  //   courses.value = response.items;
-  // }
+  if (success && response) {
+    total.value = response.total;
+    streams.value = response.items;
+  }
 
   loading.value = false;
 };

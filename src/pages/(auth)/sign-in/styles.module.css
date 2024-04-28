@@ -7,7 +7,7 @@
     &:nth-child(2) {
       inset: 0;
       background-size: 16px 16px;
-      background-image: repeating-linear-gradient(45deg, rgba(180, 180, 180, 0.8) 0, rgba(48, 48, 48, 0.8) 1px, rgba(152, 151, 151, 0.2) 0, rgba(104, 104, 104, 0.2) 50%);
+      background-image: repeating-linear-gradient(45deg, rgb(180 180 180 / 80%) 0, rgb(48 48 48 / 80%) 1px, rgb(152 151 151 / 20%) 0, rgb(104 104 104 / 20%) 50%);
       height: 100vh;
       border-radius: 0;
       border-left: 1px solid #3C3C3E;

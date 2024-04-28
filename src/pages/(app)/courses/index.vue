@@ -19,11 +19,19 @@
             {{ item.description }}
           </Typography>
 
-          <BaseButton type="flat" size="s" @click="onEditCourse(item as unknown as Course)">
-            <template #left-icon>
-              <EditIcon />
-            </template>
-          </BaseButton>
+          <div :class="styles.actions">
+            <BaseButton type="flat" size="s" @click="onEditCourse(item as unknown as Course)">
+              <template #left-icon>
+                <EditIcon />
+              </template>
+            </BaseButton>
+
+            <BaseButton type="flat" size="s" @click="onAddReview(item as unknown as Course)">
+              <template #left-icon>
+                <CommentIcon />
+              </template>
+            </BaseButton>
+          </div>
         </div>
       </template>
 
@@ -50,15 +58,24 @@
       :course="editedCourse"
       @reloaded="fetchCourses({ currentPage: page, currentPageSize: pageSize })"
     />
+
+    <ReviewForm
+      v-model="isReviewFormOpen"
+      title="Новая рецензия"
+      action-title="Добавить"
+      type="add"
+      :course-id="courseReviewId"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useOffsetPagination } from '@vueuse/core';
 import { ref, computed, watch } from 'vue';
-import { EmptyPlaceholder, CourseForm } from 'widgets/index';
+import { EmptyPlaceholder, CourseForm, ReviewForm } from 'widgets/index';
 
 import { getCourses, type Course } from 'features/courses';
+import CommentIcon from 'shared/icons/comment.svg';
 import EditIcon from 'shared/icons/edit.svg';
 import PlusIcon from 'shared/icons/plus.svg';
 import {
@@ -73,9 +90,11 @@ import {
 import styles from './styles.module.css';
 
 const isCourseFormOpen = ref(false);
+const isReviewFormOpen = ref(false);
 const loading = ref(false);
 
 const editedCourse = ref<Course>();
+const courseReviewId = ref<number>();
 const courses = ref<Course[]>([]);
 
 const page = ref(1);
@@ -99,17 +118,22 @@ const onEditCourse = (value: Course): void => {
   isCourseFormOpen.value = true;
 };
 
+const onAddReview = async (value: Course): Promise<void> => {
+  courseReviewId.value = value.id;
+  isReviewFormOpen.value = true;
+};
+
 const fetchCourses = async (options: PaginationOptions): Promise<void> => {
   const { currentPage, currentPageSize } = options;
 
   loading.value = true;
 
-  // const { success, response } = await getCourses(currentPage, currentPageSize);
+  const { success, response } = await getCourses(currentPage, currentPageSize);
 
-  // if (success && response) {
-  //   total.value = response.total;
-  //   courses.value = response.items;
-  // }
+  if (success && response) {
+    total.value = response.total;
+    courses.value = response.items;
+  }
 
   loading.value = false;
 };
@@ -127,5 +151,10 @@ const { currentPage } = useOffsetPagination({
 watch(isCourseFormOpen, (newValue: boolean) => {
   if (newValue) return;
   editedCourse.value = undefined;
+});
+
+watch(isReviewFormOpen, (newValue: boolean) => {
+  if (newValue) return;
+  courseReviewId.value = undefined;
 });
 </script>

@@ -1,6 +1,6 @@
 import { apiClient } from 'shared/api';
 
-import type { ErrorMessage, LoginInfo, TokenInfo, TokenInfoExtended, User } from './types';
+import type { Authorize, ErrorMessage, User } from './types';
 
 export interface BaseResponse<T> {
   status?: number;
@@ -9,34 +9,14 @@ export interface BaseResponse<T> {
   response?: T;
 }
 
-export const loginUser = async (loginInfo: LoginInfo): Promise<BaseResponse<TokenInfoExtended>> => {
-  const { data, error, response } = await apiClient.POST('/auth/login', {
-    body: loginInfo,
-  });
+export const authorize = async (): Promise<BaseResponse<Authorize>> => {
+  const { data, error, response } = await apiClient.GET('/auth/google/authorize');
 
   if (error) {
     return {
       success: false,
       status: (response as Response).status,
-      message: { detail: (error as ErrorMessage).detail as string },
-    };
-  }
-
-  return { success: true, status: response.status, response: data };
-};
-
-export const refreshUserToken = async (refreshToken: string): Promise<BaseResponse<TokenInfo>> => {
-  const { data, error, response } = await apiClient.POST('/auth/refresh', {
-    headers: {
-      Authorization: `Bearer ${refreshToken}`,
-    },
-  });
-
-  if (error) {
-    return {
-      success: false,
-      status: (response as Response).status,
-      message: { detail: (error as ErrorMessage).detail as string },
+      message: { detail: (error as unknown as ErrorMessage).detail as string },
     };
   }
 

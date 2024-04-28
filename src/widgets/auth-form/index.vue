@@ -1,28 +1,49 @@
 <template>
-  <form :class="styles.form" @submit.prevent="onSubmit">
+  <div :class="styles.form">
     <Typography span="h3" variant="h3-semi">Авторизуйтесь <br />для работы с системой</Typography>
 
-    <BaseButton :class="styles.button" type="primary" size="l" full submit :loading="isLoading">
+    <BaseButton
+      type="primary"
+      size="l"
+      full
+      :class="styles.button"
+      :loading="loading"
+      @click="onAuthorize"
+    >
       <template #left-icon>
         <GoogleIcon />
       </template>
 
       Авторизоваться
     </BaseButton>
-  </form>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { loginSchema } from 'features/auth';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+import { authorize } from 'features/auth';
 import GoogleIcon from 'shared/icons/google.svg';
 import { Typography, BaseButton } from 'shared/ui';
-import { useForm } from 'shared/utils/useForm';
 
 import styles from './styles.module.css';
 
-const { submit, isLoading } = useForm(loginSchema);
+const loading = ref(false);
 
-const onSubmit = submit(async (): Promise<void> => {
-  //
-});
+const router = useRouter();
+
+const onAuthorize = async (): Promise<void> => {
+  loading.value = true;
+
+  const { success, response } = await authorize();
+
+  if (success) {
+    window.open(response?.authorization_url as string, '_blank');
+  }
+
+  loading.value = false;
+
+  router.push({ path: '/' });
+};
 </script>
