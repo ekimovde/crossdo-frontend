@@ -1,0 +1,7 @@
+.group {
+  --dropdown-group-gap: var(--margin-xs);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--dropdown-group-gap);
+}

@@ -1,0 +1,18 @@
+body {
+  font-family: Inter, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.bg {
+  background-color: #1e1e21;
+  height: 100vh;
+}

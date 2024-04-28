@@ -1,0 +1,164 @@
+:global(:root) {
+  /* display */
+  --font-display-l: 700 normal 40px/48px "Inter", sans-serif;
+  --font-display-m: 700 normal 32px/38.4px "Inter", sans-serif;
+  --font-display-s: 700 normal 24px/28.8px "Inter", sans-serif;
+  --font-display-s-semi: 600 normal 24px/28.8px "Inter", sans-serif;
+
+  /* text-xl */
+  --font-text-xl-0: 400 normal 18px/25.2px "Inter", sans-serif;
+  --font-text-xl-1: 500 normal 18px/25.2px "Inter", sans-serif;
+  --font-text-xl-2: 600 normal 18px/25.2px "Inter", sans-serif;
+  --font-text-xl-3: 700 normal 18px/25.2px "Inter", sans-serif;
+
+  /* text-l */
+  --font-text-l-0: 400 normal 16px/22.4px "Inter", sans-serif;
+  --font-text-l-1: 500 normal 16px/22.4px "Inter", sans-serif;
+  --font-text-l-2: 600 normal 16px/22.4px "Inter", sans-serif;
+  --font-text-l-3: 700 normal 16px/22.4px "Inter", sans-serif;
+
+  /* text-m */
+  --font-text-m-0: 400 normal 14px/19.6px "Inter", sans-serif;
+  --font-text-m-1: 500 normal 14px/19.6px "Inter", sans-serif;
+  --font-text-m-2: 600 normal 14px/19.6px "Inter", sans-serif;
+  --font-text-m-3: 700 normal 14px/19.6px "Inter", sans-serif;
+
+  /* text-s */
+  --font-text-s-0: 400 normal 12px/16.8px "Inter", sans-serif;
+  --font-text-s-1: 500 normal 12px/16.8px "Inter", sans-serif;
+  --font-text-s-2: 600 normal 12px/16.8px "Inter", sans-serif;
+  --font-text-s-3: 700 normal 12px/16.8px "Inter", sans-serif;
+
+  /* text-xs */
+  --font-text-xs-0: 400 normal 10px/12px "Inter", sans-serif;
+  --font-text-xs-1: 500 normal 10px/12px "Inter", sans-serif;
+  --font-text-xs-2: 600 normal 10px/12px "Inter", sans-serif;
+  --font-text-xs-3: 700 normal 10px/12px "Inter", sans-serif;
+
+  /* caption */
+  --font-caption-m: 500 normal 15px/24px "Inter", sans-serif;
+  --font-caption-s: 500 normal 11px/16px "Inter", sans-serif;
+  --font-caption-xs: 500 normal 8px/12px "Inter", sans-serif;
+
+  /* label */
+  --font-label: 500 normal 8px/9.6px "Inter", sans-serif;
+
+  /* error-title */
+  --font-error-title: 800 normal 260px/260px "Inter", sans-serif;
+}
+
+.h1 {
+  font: var(--font-display-l);
+}
+
+.h2 {
+  font: var(--font-display-m);
+}
+
+.h3 {
+  font: var(--font-display-s);
+}
+
+.h3-semi {
+  font: var(--font-display-s-semi);
+}
+
+.text-xl-0 {
+  font: var(--font-text-xl-0);
+}
+
+.text-xl-1 {
+  font: var(--font-text-xl-1);
+}
+
+.text-xl-2 {
+  font: var(--font-text-xl-2);
+}
+
+.text-xl-3 {
+  font: var(--font-text-xl-3);
+}
+
+.text-l-0 {
+  font: var(--font-text-l-0);
+}
+
+.text-l-1 {
+  font: var(--font-text-l-1);
+}
+
+.text-l-2 {
+  font: var(--font-text-l-2);
+}
+
+.text-l-3 {
+  font: var(--font-text-l-3);
+}
+
+.text-m-0 {
+  font: var(--font-text-m-0);
+}
+
+.text-m-1 {
+  font: var(--font-text-m-1);
+}
+
+.text-m-2 {
+  font: var(--font-text-m-2);
+}
+
+.text-m-3 {
+  font: var(--font-text-m-3);
+}
+
+.text-s-0 {
+  font: var(--font-text-s-0);
+}
+
+.text-s-1 {
+  font: var(--font-text-s-1);
+}
+
+.text-s-2 {
+  font: var(--font-text-s-2);
+}
+
+.text-s-3 {
+  font: var(--font-text-s-3);
+}
+
+.text-xs-0 {
+  font: var(--font-text-xs-0);
+}
+
+.text-xs-1 {
+  font: var(--font-text-xs-1);
+}
+
+.text-xs-2 {
+  font: var(--font-text-xs-2);
+}
+
+.text-xs-3 {
+  font: var(--font-text-xs-3);
+}
+
+.caption-m {
+  font: var(--font-caption-m);
+}
+
+.caption-s {
+  font: var(--font-caption-s);
+}
+
+.caption-xs {
+  font: var(--font-caption-xs);
+}
+
+.label {
+  font: var(--font-label);
+}
+
+.error-title {
+  font: var(--font-error-title);
+}

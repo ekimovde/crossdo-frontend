@@ -1,0 +1,80 @@
+.viewport {
+  --toast-viewport-padding: 10px;
+
+  position: fixed;
+  top: var(--toast-viewport-padding);
+  left: 50%;
+  z-index: 20;
+  transform: translateX(-50%);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toast {
+  --toast-bg: #E15D56;
+  --toast-color: var(--palette-white);
+  --toast-radius: var(--radius-m);
+  --toast-gap: var(--margin-xl);
+  --toast-padding: var(--margin-xl);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--toast-gap);
+  padding: var(--toast-padding);
+  border-radius: var(--toast-radius);
+  background-color: var(--toast-bg);
+
+  & .texts {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: var(--toast-color);
+  }
+
+  & .close {
+    display: flex;
+    align-self: center;
+    background-color: transparent;
+    border: none;
+    color: var(--toast-color);
+    cursor: pointer;
+  }
+
+  &[data-state="open"] {
+    animation: show 200ms ease-out;
+  }
+
+  &[data-state="closed"] {
+    animation: hide 200ms ease-in;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+}

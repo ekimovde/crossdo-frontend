@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-3xl);
+  width: 100%;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-8xl);
+  }
+
+  & .inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-xl);
+
+    & > span {
+      color: #878789;
+    }
+  }
+
+  & fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &.fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      & > div {
+        width: 100%;
+        max-width: 365px;
+      }
+    }
+
+    &.action {
+      max-width: 160px;
+    }
+  }
+}

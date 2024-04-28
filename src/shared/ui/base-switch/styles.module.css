@@ -1,0 +1,74 @@
+.wrapper {
+  /* switch-size is the height of the switch – width is twice the height. */
+  --switch-size: 24px;
+  --switch-padding: var(--margin-xs);
+  --switch-radius: var(--radius-l);
+  --switch-bg: #f6f5f3;
+  --switch-bg-checked: #fdca66;
+  --switch-thumb-bg: var(--palette-dark);
+  --switch-thumb-shadow: 0 0 4px 0 rgb(0 0 0 / 15%);
+  --switch-thumb-bg-checked: var(--palette-white);
+  --switch-thumb-shadow-checked: 0 0 4px 0 rgb(0 0 0 / 15%);
+  --switch-thumb-bg-disabled: #6e7279;
+  --switch-label-gap: var(--margin-m);
+  --switch-label-color: var(--palette-dark);
+  --switch-label-color-disabled: #7a869f;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: var(--switch-label-gap);
+
+  & .label {
+    flex-grow: 1;
+    color: var(--switch-label-color);
+    transition: color 150ms ease-in-out;
+    cursor: pointer;
+  }
+
+  & .switch {
+    position: relative;
+    height: var(--switch-size);
+    width: calc(2 * var(--switch-size));
+    padding: var(--switch-padding);
+    border: none;
+    border-radius: var(--switch-radius);
+    background-color: var(--switch-bg);
+    transition: background-color 100ms ease-in-out;
+    cursor: pointer;
+
+    &[data-state="checked"] {
+      background-color: var(--switch-bg-checked);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  & .thumb {
+    display: block;
+    width: calc(var(--switch-size) - (2 * var(--switch-padding)));
+    height: calc(var(--switch-size) - (2 * var(--switch-padding)));
+    border-radius: 50%;
+    background-color: var(--switch-thumb-bg);
+    box-shadow: var(--switch-thumb-shadow);
+    transform: translateX(0);
+    transition: transform 100ms, box-shadow 100ms, background-color 100ms ease-in-out;
+
+    &[data-state='checked'] {
+      background-color: var(--switch-thumb-bg-checked);
+      box-shadow: var(--switch-thumb-shadow-checked);
+      transform: translateX(var(--switch-size));
+    }
+  }
+
+  & .switch:disabled ~ .label {
+    color: var(--switch-label-color-disabled);
+    cursor: not-allowed;
+  }
+
+  & .switch:disabled .thumb {
+    background-color: var(--switch-thumb-bg-disabled);
+  }
+}

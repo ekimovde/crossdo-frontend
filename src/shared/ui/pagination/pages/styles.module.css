@@ -1,0 +1,30 @@
+.button {
+  --pagination-bg: #19191b;
+  --pagination-bg-active: #09090a;
+  --pagination-color: var(--palette-white);
+  --pagination-color-active: var(--palette-brand);
+
+  background-color: var(--pagination-bg);
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+
+  & span {
+    color: var(--pagination-color);
+  }
+
+  &:hover, &.active {
+    background-color: var(--pagination-bg-active);
+
+    & span {
+      color: var(--pagination-color-active);
+    }
+  }
+}

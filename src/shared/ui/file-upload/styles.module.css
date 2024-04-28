@@ -1,0 +1,32 @@
+.file-upload {
+  width: 100%;
+  height: 52px;
+  box-sizing: border-box;
+
+  & .uploader {
+    padding: var(--spacing-2xl) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--palette-brand-20);
+    border: 1px dashed var(--palette-brand);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-m);
+    cursor: pointer;
+    transition: background-color 150ms ease-out;
+
+    &:hover {
+      background-color: var(--palette-brand-40);
+    }
+
+    & > span {
+      color: var(--palette-brand);
+    }
+  }
+
+  & .input-file {
+    display: none;
+  }
+}

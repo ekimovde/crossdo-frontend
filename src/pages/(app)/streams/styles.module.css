@@ -1,0 +1,23 @@
+& .page {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-5xl);
+  width: 100%;
+  box-sizing: border-box;
+
+  & .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > h3 {
+      color: var(--palette-white);
+    }
+  }
+
+  & .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

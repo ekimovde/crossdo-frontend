@@ -1,0 +1,136 @@
+.overlay {
+  --modal-overlay-bg: rgb(0 0 0 / 60%);
+  --modal-overlay-filter: blur(8px);
+  --modal-content-bg: var(--palette-white);
+  --modal-content-padding-s: 18px;
+  --modal-content-padding-m: 20px;
+  --modal-content-padding-l: 24px;
+  --modal-content-radius: 16px;
+  --modal-close-color: var(--palette-black);
+  --modal-close-radius: var(--border-radius-m);
+
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  background: var(--modal-overlay-bg);
+  backdrop-filter: var(--modal-overlay-filter);
+
+  .content {
+    position: relative;
+    border-radius: var(--modal-content-radius);
+    background-color: #1E1E21;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+
+    &.s {
+      padding: var(--modal-content-padding-s);
+    }
+
+    &.m {
+      padding: var(--modal-content-padding-m);
+    }
+
+    &.l {
+      padding: var(--modal-content-padding-l);
+    }
+
+    &.confirm {
+      padding: var(--spacing-7xl) var(--spacing-5xl) var(--spacing-5xl);
+    }
+  }
+
+  .header {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    position: relative;
+
+    & > span {
+      color: var(--palette-white);
+      margin-right: auto;
+    }
+  }
+
+  .text {
+    text-align: center;
+    color: var(--palette-white);
+    white-space: pre-wrap;
+  }
+
+  .close {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--palette-white);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+    margin-top: 32px;
+
+    &.confirm {
+      margin-top: var(--spacing-5xl);
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    backdrop-filter: none;
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+
+  to {
+    opacity: 0;
+    backdrop-filter: none;
+  }
+}
+
+.overlay[data-state='open'],
+.content[data-state='open'] {
+  animation: show 200ms ease-out;
+}
+
+.overlay[data-state='closed'],
+.content[data-state='closed'] {
+  animation: hide 200ms ease-in;
+}

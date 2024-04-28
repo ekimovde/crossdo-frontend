@@ -1,0 +1,43 @@
+.content {
+  --dropdown-content-radius: var(--radius-m);
+  --dropdown-content-padding: var(--margin-xl);
+  --dropdown-content-bg: var(--palette-white);
+  --dropdown-content-shadow: 0 15px 30px 0 rgb(0 0 0 / 10%);
+
+  padding: var(--dropdown-content-padding);
+  background-color: var(--dropdown-content-bg);
+  border-radius: var(--dropdown-content-radius);
+  box-shadow: var(--dropdown-content-shadow);
+
+  &[data-state="open"] {
+    animation: show 200ms ease-out;
+  }
+
+  &[data-state="closed"] {
+    animation: hide 200ms ease-in;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+}

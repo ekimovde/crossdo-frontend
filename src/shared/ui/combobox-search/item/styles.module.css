@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3xl);
+  cursor: pointer;
+
+  & span {
+    color: var(--palette-white);
+  }
+
+  &:hover, &[data-state="checked"] {
+    background-color: var(--palette-light-blue);
+  }
+
+  &:first-child {
+    border-radius: var(--radius-m) var(--radius-m) 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 var(--radius-m) var(--radius-m);
+  }
+
+  & .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size-l);
+    height: var(--icon-size-l);
+  }
+}

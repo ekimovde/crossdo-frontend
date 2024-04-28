@@ -1,0 +1,11 @@
+& .page {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-5xl);
+  width: 100%;
+  box-sizing: border-box;
+
+  & > h3 {
+    color: var(--palette-white);
+  }
+}

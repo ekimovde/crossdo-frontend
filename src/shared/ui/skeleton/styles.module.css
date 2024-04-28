@@ -1,0 +1,33 @@
+.wrapper {
+  --skeleton-background: #e9e9f5;
+  --skeleton-background-lighter: #f6f8fc;
+  --skeleton-radius: var(--radius-s);
+
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--skeleton-background);
+  border-radius: var(--skeleton-radius);
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-image: linear-gradient(
+        90deg,
+        var(--skeleton-background) 0,
+        var(--skeleton-background-lighter) 50%,
+        var(--skeleton-background) 100%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

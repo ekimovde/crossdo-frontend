@@ -1,0 +1,23 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "node_modules/.pnpm/@vue+runtime-core@3.3.4/node_modules/@vue/runtime-core/dist/runtime-core.d.ts"
+  ],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "app/*": ["./src/app/*"],
+      "features/*": ["./src/features/*"],
+      "shared/*": ["./src/shared/*"],
+      "entities/*": ["./src/entities/*"],
+      "widgets/*": ["./src/widgets/*"],
+      "pages/*": ["./src/pages/*"]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.button {
+  --button-bg: #19191b;
+  --button-bg-disabled: #515151;
+  --button-color: var(--palette-brand);
+  --button-color-disabled: var(--palette-dark-40);
+
+  background-color: var(--button-bg);
+  border: none;
+  outline: none;
+  padding: var(--spacing-l) var(--spacing-xl);
+  border-radius: var(--radius-m);
+  display: flex;
+  align-items: center;
+  column-gap: var(--spacing-l);
+  cursor: pointer;
+  width: fit-content;
+
+  & .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--button-color);
+  }
+
+  & span {
+    color: var(--button-color);
+  }
+
+  &[disabled=''] {
+    cursor: initial;
+    background-color: var(--button-bg-disabled);
+
+    & span, & .icon {
+      color: var(--button-color-disabled);
+    }
+  }
+}

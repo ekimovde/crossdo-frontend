@@ -1,0 +1,6 @@
+.label {
+  --dropdown-label-color: var(--palette-brand);
+
+  font-weight: bold;
+  color: var(--dropdown-label-color);
+}

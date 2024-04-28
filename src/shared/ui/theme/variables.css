@@ -1,0 +1,93 @@
+/*
+All this variables are exported from Figma
+with the help of **variables2css** plugin.
+*/
+:root {
+  /* colors */
+  --palette-black: #000;
+  --palette-green-shadow: 0px 0px 0px 4px #7fb36b33;
+  --palette-gray-page: #f1f2f4;
+  --palette-brand: #6cb853;
+  --palette-brand-80: #6cb853cc;
+  --palette-brand-60: #6cb85399;
+  --palette-brand-40: #6cb85366;
+  --palette-brand-20: #6cb85333;
+  --palette-dark: #1a1a1a;
+  --palette-dark-80: #1a1a1acc;
+  --palette-dark-60: #1a1a1a99;
+  --palette-dark-40: #1a1a1a66;
+  --palette-dark-20: #1a1a1a33;
+  --palette-white: #fff;
+  --palette-white-80: #fffc;
+  --palette-white-60: #fff9;
+  --palette-white-40: #fff6;
+  --palette-white-20: #fff3;
+  --palette-gray: #f3f3f3;
+  --palette-gray-80: #f3f3f3cc;
+  --palette-gray-60: #f3f3f399;
+  --palette-gray-40: #f3f3f366;
+  --palette-gray-20: #f3f3f333;
+  --palette-light-gray: #eaecf0;
+  --palette-light-blue: #f5f7f9;
+  --palette-logo-green: #7fb36b;
+  --palette-success: #17b26a;
+  --palette-success-80: #17b26acc;
+  --palette-success-60: #17b26a99;
+  --palette-success-40: #17b26a66;
+  --palette-success-20: #17b26a33;
+  --palette-error: #f04438;
+  --palette-error-80: #f04438cc;
+  --palette-error-60: #f0443899;
+  --palette-error-40: #f0443866;
+  --palette-error-20: #f0443833;
+  --palette-warning: #f79009;
+  --palette-warning-80: #f79009cc;
+  --palette-warning-60: #f7900999;
+  --palette-warning-40: #f7900966;
+  --palette-warning-20: #f7900933;
+  --palette-info: #2e90fa;
+  --palette-info-80: #2e90facc;
+  --palette-info-60: #2e90fa99;
+  --palette-info-40: #2e90fa66;
+  --palette-info-20: #2e90fa33;
+  --palette-disabled: #e3e8ed;
+
+  /* spacings */
+  --spacing-xs: 2px;
+  --spacing-s: 4px;
+  --spacing-m: 6px;
+  --spacing-l: 8px;
+  --spacing-xl: 12px;
+  --spacing-2xl: 14px;
+  --spacing-3xl: 16px;
+  --spacing-4xl: 20px;
+  --spacing-5xl: 24px;
+  --spacing-7xl: 32px;
+  --spacing-8xl: 40px;
+  --spacing-9xl: 48px;
+  --spacing-15xl: 64px;
+  --spacing-20xl: 80px;
+
+  /* radiuses */
+  --radius-xs: 3px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+
+  /* icon sizes */
+  --icon-size-s: 12px;
+  --icon-size-m: 16px;
+  --icon-size-l: 20px;
+
+  /* shadows */
+  --shadow-xs: 0px 1px 2px 0px #1018280d;
+  --shadow-sm: 0px 1px 3px 0px #1018281a;
+  --shadow-md: 0px 4px 8px -2px #1018281a;
+  --shadow-lg: 0px 12px 16px -4px #10182814;
+  --shadow-xl: 0px 20px 24px -4px #10182814;
+  --shadow-2xl: 0px 24px 48px -12px #1018282e;
+  --shadow-3xl: 0px 32px 64px -12px #10182824;
+}

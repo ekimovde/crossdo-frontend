@@ -1,0 +1,63 @@
+.trigger {
+  --trigger-bg: var(--palette-white);
+  --trigger-color: var(--palette-dark);
+  --trigger-color-hover: var(--palette-dark);
+  --trigger-color-filled: var(--palette-dark);
+  --trigger-border-color: var(--palette-brand-80);
+  --trigger-border-color-hover: var(--palette-brand);
+  --trigger-padding: var(--margin-m) var(--margin-l);
+  --trigger-radius: var(--radius-m);
+  --trigger-gap: var(--margin-xl);
+
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--trigger-padding);
+  gap: var(--trigger-gap);
+  border-radius: var(--trigger-radius);
+  border: 1px solid var(--trigger-border-color);
+  background-color: var(--trigger-bg);
+  transition: border 150ms ease-in-out;
+
+  & svg {
+    width: 16px;
+    height: 16px;
+    transform: rotate(0deg);
+    color: var(--trigger-color);
+    transition: transform 150ms, color 150ms;
+  }
+
+  & .label {
+    flex-grow: 1;
+    text-align: left;
+    color: var(--trigger-color);
+    transition: color 150ms ease-in-out;
+
+    &.filled {
+      color: var(--trigger-color-filled);
+    }
+  }
+
+  &[data-state="open"] {
+    border: 1px solid var(--trigger-border-color-hover);
+
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    border-color: var(--trigger-border-color-hover);
+
+    & .label {
+      color: var(--trigger-color-hover);
+    }
+
+    & svg {
+      color: var(--trigger-color-hover);
+    }
+  }
+}
